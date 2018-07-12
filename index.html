@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Elektrihinna arvutamine</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script>
+function day() {
+var quantity = Number($("#dayquantity").val());
+var price = Number($("#dayprice").val());
+var day1 = Number($("#day1").val());
+var day2 = Number($("#day2").val());
+var day3 = Number($("#day3").val());
+
+var daysum = (price + day1 + day2 + day3) * 1.2 * quantity;
+var daykw = (price + day1 + day2 + day3) * 1.2;
+$("#daysum").val(daysum + " EUR");
+$("#daykw").val(daykw + " EUR");
+}
+
+function night() {
+var quantity = Number($("#nightquantity").val());
+var price = Number($("#nightprice").val());
+var night1 = Number($("#night1").val());
+var night2 = Number($("#night2").val());
+var night3 = Number($("#night3").val());
+
+var nightsum = (price + night1 + night2 + night3) * 1.2 * quantity;
+var nightkw = (price + night1 + night2 + night3) * 1.2;
+$("#nightsum").val(nightsum + " EUR");
+$("#nightkw").val(nightkw + " EUR");
+}
+</script>
+</head>
+<body>
+
+  <div class="box">
+  <h1>Päeva elektriarvesti</h1>
+  <b>Kogus:</b>
+  <br>
+  <input type="text" id="dayquantity" value="0">
+  <br>
+  <b>Päeva hind:</b>
+  <br>
+  <input type="text" id="dayprice" value="0">
+  <br>
+  <b>Püsivad väärtused:</b>
+  <br>
+  <input type="text" id="day1" value="0.0513">
+   <br>
+  <input type="text" id="day2" value="0.0089">
+  <br>
+  <input type="text" id="day3" value="0.00447">
+  <br>
+  <button onclick="day()">Arvuta</button>
+  <br>
+  <b>Summa:</b>
+  <input disabled type="text" id="daysum" value="0.0">
+  <br>
+  <b>Kilovatihind:</b>
+  <input disabled type="text" id="daykw" value="0.0">
+  
+  </div>
+
+  
+  <div class="box">
+  <h1>Öö elektriarvesti</h1>
+  <b>Kogus:</b>
+  <br>
+  <input type="text" id="nightquantity" value="0">
+  <br>
+  <b>Öö hind:</b>
+  <br>
+  <input type="text" id="nightprice" value="0">
+  <br>
+  <b>Püsivad väärtused:</b>
+  <br>
+  <input type="text" id="night1" value="0.0298">
+   <br>
+  <input type="text" id="night2" value="0.0089">
+  <br>
+  <input type="text" id="night3" value="0.00447">
+  <br>
+  <button onclick="night()">Arvuta</button>
+    <br>
+  <b>Summa:</b>
+  <input disabled type="text" id="nightsum" value="0.0">
+  <br>
+  <b>Kilovatihind:</b>
+  <input disabled type="text" id="nightkw" value="0.0">
+  </div>
+  
+
+</body>
+</html>
